@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GrowthDataPoint" representedClassName="GrowthDataPoint" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PuppyData" inverseName="growthdata" inverseEntity="PuppyData" syncable="YES"/>
+    </entity>
+    <entity name="ImageCounter" representedClassName="ImageCounter" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="PuppyData" representedClassName="PuppyData" syncable="YES">
+        <relationship name="growthdata" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GrowthDataPoint" inverseName="data" inverseEntity="GrowthDataPoint" syncable="YES"/>
+        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PuppyProfile" inverseName="data" inverseEntity="PuppyProfile" syncable="YES"/>
+    </entity>
+    <entity name="PuppyProfile" representedClassName="PuppyProfile" syncable="YES">
+        <attribute name="breedOne" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="breedTwo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dob" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PuppyData" inverseName="profile" inverseEntity="PuppyData" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GrowthDataPoint" positionX="-5933" positionY="8" width="128" height="88"/>
+        <element name="ImageCounter" positionX="-6102" positionY="113" width="128" height="58"/>
+        <element name="PuppyData" positionX="-6102" positionY="-63" width="128" height="73"/>
+        <element name="PuppyProfile" positionX="-5933" positionY="-145" width="128" height="148"/>
+    </elements>
+</model>
